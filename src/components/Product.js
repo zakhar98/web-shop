@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom';
 import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import { GridList, GridTile } from 'material-ui/GridList';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 
 // Product component
 class ProductComponent extends React.Component {
@@ -48,26 +48,19 @@ class ProductComponent extends React.Component {
     }
 
     render() {
-        const mrp = <span>MRP Rs<span className="mrp">{this.props.mrp ? this.props.mrp : ''}</span> <strong> {this.props.price}</strong></span>;
+        const mrp = <span><strong> {this.props.price}</strong></span>;
         return (
-          <MuiThemeProvider>
             <Card>
-                
-                    <CardMedia overlay={<CardTitle title={this.props.name} subtitle={mrp} />} >
-
-                            <img className="group list-group-image" src={logo} alt="" />
-
-                    </CardMedia>
-                
+                <CardMedia overlay={<CardTitle title={this.props.name} />} >
+                    <img className="group list-group-image" src={this.props.img} alt="" />
+                </CardMedia>
                 <CardText>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Donec mattis pretium massa.
+                    {this.props.label}
                 </CardText>
                 <CardActions className="cart-btn">
                     <RaisedButton primary={!this.props.isInCart} secondary={true} className={this.props.isInCart ? 'dangerbutton' : 'blackroundbutton'} onClick={this.handleClick} label={this.props.isInCart ? 'Remove' : 'Add to cart'} />
                 </CardActions>
             </Card>
-          </MuiThemeProvider>
         )
     }
 }
