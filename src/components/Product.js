@@ -48,14 +48,14 @@ class ProductComponent extends React.Component {
     }
 
     render() {
-        const mrp = <span><strong> {this.props.price}</strong></span>;
+        const mrp = <span><strong>Price: {this.props.price}</strong></span>;
         return (
             <Card>
-                <CardMedia overlay={<CardTitle title={this.props.name} />} >
-                    <img className="group list-group-image" src={this.props.img} alt="" />
+                <CardMedia overlay={<CardTitle title={this.props.name} subtitle={mrp}/>} >
+                    <img className="group list-group-image" src={this.props.image} alt="" />
                 </CardMedia>
                 <CardText>
-                    {this.props.label}
+                    {this.props.label} Expand info ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
                 </CardText>
                 <CardActions className="cart-btn">
                     <RaisedButton primary={!this.props.isInCart} secondary={true} className={this.props.isInCart ? 'dangerbutton' : 'blackroundbutton'} onClick={this.handleClick} label={this.props.isInCart ? 'Remove' : 'Add to cart'} />

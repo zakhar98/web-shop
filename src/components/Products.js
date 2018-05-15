@@ -31,7 +31,7 @@ class ProductsComponent extends React.Component {
 
     // Init point to load data and attach events
     componentDidMount() {
-        this.props.fetchData('http://5826ed963900d612000138bd.mockapi.io/items');
+        this.props.fetchData('http://5af943c4edf5520014cbd256.mockapi.io/api/items');
        /* this.props.dispatch(loadItems());
         window.addEventListener("scroll", _.debounce((e) => this.getProducts(e), 100));*/
     }
